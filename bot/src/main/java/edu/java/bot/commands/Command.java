@@ -1,9 +1,8 @@
-package edu.java.bot;
+package edu.java.bot.commands;
+
 import com.pengrad.telegrambot.model.BotCommand;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
-import java.util.Objects;
-import org.jetbrains.annotations.Nullable;
 
 public interface Command {
     String command();
@@ -12,7 +11,9 @@ public interface Command {
 
     SendMessage handle(Update update);
 
-    default boolean supports(Update update) { ... }
+    default boolean supports(Update update) {
+        return update.message().text().trim().equals(command());
+    }
 
     default BotCommand toApiCommand() {
         return new BotCommand(command(), description());

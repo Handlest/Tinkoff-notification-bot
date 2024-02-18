@@ -30,3 +30,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### custom ###
+.properties
+/bot/src/main/resources/application.properties
