@@ -1,4 +1,5 @@
 package edu.java.bot.commands;
+
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 import org.springframework.stereotype.Component;
@@ -20,11 +21,11 @@ public class StartCommand implements Command {
         long chatId = update.message().chat().id();
         return new SendMessage(
             chatId,
+            """
+                Добро пожаловать!
+                Данный бот позволяет отслеживать изменения на интересующих Вас веб-страницах!
+                На данный момент реализована поддержка страниц github и StackOverflow
                 """
-                     Добро пожаловать!
-                     Данный бот позволяет отслеживать изменения на интересующих Вас веб-страницах!
-                     На данный момент реализована поддержка страниц github и StackOverflow
-                     """
         );
     }
 }

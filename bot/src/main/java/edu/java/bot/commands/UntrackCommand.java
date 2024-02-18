@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UntrackCommand implements Command {
-    public final static String REPLY_TEXT = "Отправьте ответом на данное сообщение ссылку, которую вы хотите удалить" +
-        " из отслеживания";
+    public final static String REPLY_TEXT = "Отправьте ответом на данное сообщение ссылку, которую вы хотите удалить"
+        + " из отслеживания";
 
     @Override
     public String command() {

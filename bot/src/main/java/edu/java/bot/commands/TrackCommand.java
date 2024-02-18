@@ -1,4 +1,5 @@
 package edu.java.bot.commands;
+
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.request.ForceReply;
 import com.pengrad.telegrambot.request.SendMessage;
@@ -6,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TrackCommand implements Command {
-    public final static String REPLY_TEXT = "Отправьте ответом на это сообщение ссылку, которую вы хотите отслеживать" +
-        "\nПоддерживаются GitHub и StackOverFlow";
+    public final static String REPLY_TEXT = "Отправьте ответом на это сообщение ссылку, которую вы хотите отслеживать"
+        + "\nПоддерживаются GitHub и StackOverFlow";
 
     @Override
     public String command() {
@@ -30,7 +31,7 @@ public class TrackCommand implements Command {
     }
 
     private boolean isReply(Update update) {
-        return update.message().replyToMessage() != null &&
-            update.message().replyToMessage().text().equals(REPLY_TEXT);
+        return update.message().replyToMessage() != null
+            && update.message().replyToMessage().text().equals(REPLY_TEXT);
     }
 }
