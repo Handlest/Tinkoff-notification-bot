@@ -30,7 +30,7 @@ public class DefaultMessageProcessor implements UserMessageProcessor {
             if (command.supports(update)) {
                 return command.handle(update);
             }
-            if (update.message().replyToMessage() != null) {
+            else if (update.message().replyToMessage() != null) {
                 return processReply(update);
             }
         }
